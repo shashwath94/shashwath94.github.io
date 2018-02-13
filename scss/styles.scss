@@ -5,14 +5,12 @@
     Author: Ryan Fitzgerald
     Repo: https://github.com/RyanFitzgerald/devportfolio-template
     Issues: https://github.com/RyanFitzgerald/devportfolio-template/issues
-
     Description: This file contains all the styles associated with the page
     that don't come from third party libraries. This file gets compiled using
     Gulp and send to the /css folder which is then loaded on the page.
 */
 /*
     File Contents:
-
         1. Variables
         2. Mixins
         3. Global Styles
@@ -32,7 +30,18 @@
     ----- 1. Variables -----
     ------------------------
 */
-
+html, body {
+     margin: 0;
+   padding: 0;
+     }
+    
+     .background {
+       position: absolute;
+       display: block;
+       top: 0;
+       left: 0;
+       z-index: 0;
+     }
 // Define base and accent colors
 $base-color: #3498db;
 $base-color-hover: darken($base-color, 10%);
@@ -140,7 +149,7 @@ body {
   }
 }
 
-header {
+header1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -266,10 +275,10 @@ footer {
         color: $text;
     }
 }
-
-.social {
-    text-align: right;
-
+.social_link{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 200;
     ul {
         margin: 5px 0 0 0;
         padding: 0;
@@ -289,6 +298,74 @@ footer {
         &:hover {
             color: $base-color;
         }
+    }
+}
+
+.social {
+    text-align: right;
+    
+    ul {
+        margin: 5px 0 0 0;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        font-size: 1.25em;
+        list-style: none;
+    }
+
+    a {
+        display: block;
+        color: $text;
+        padding: 10px;
+
+        &:hover {
+            color: $base-color;
+        }
+    }
+}
+
+.linkedin {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    padding: 15px;
+    
+    text-align: left;
+    display: table;
+    
+    h3 {
+        font-weight: 500;
+        float: left;
+        margin: 0;
+        color: $heading;
+    }
+
+    span {
+        color: $text;
+        float: right;
+    }
+
+    h4 {
+        color: $text;
+        clear: both;
+        font-weight: 500;
+        margin: 0 0 15px 0;
+    }
+    h5 {
+        font-size: 1.2em;
+        font-weight: 300;
+        color: #7e8890;
+        margin: 0 0 15px 0;
+    }
+    p, ul {
+        margin: 0;
+        color: $text;
+        font-size: 0.9em;
+    }
+
+    ul {
+        padding: 0 0 0 15px;
     }
 }
 
@@ -349,9 +426,11 @@ footer {
     position: relative;
     height: 100vh;
     min-height: 500px;
-    max-height: 1080px;
-    background: url(../images/lead-bg.jpg);
-    background-size: cover;
+    max-height: 700px;
+    background-image: url(../images/photo2.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    //background-size: relative;
     padding: 15px;
     overflow: hidden;
 }
@@ -364,7 +443,7 @@ footer {
     transform: translate(-50%, -50%);
     text-align: center;
 
-    h1, h2 {
+    h1, h2,h3{
         margin: 0;
     }
 
@@ -381,6 +460,12 @@ footer {
         color: lighten($base-color, 25%);
         font-weight: 500;
         font-size: 2.25em;
+        margin-bottom: 15px;
+    }
+    h3 {
+        color: lighten($base-color, 25%);
+        font-weight: 500;
+        font-size: 1.25em;
         margin-bottom: 15px;
     }
 }
@@ -612,6 +697,47 @@ footer {
         font-weight: 500;
         margin: 0 0 15px 0;
     }
+    h5 {
+        font-size: 1.2em;
+        font-weight: 300;
+        color: #7e8890;
+        margin: 0 0 15px 0;
+    }
+    p, ul {
+        margin: 0;
+        color: $text;
+        font-size: 0.9em;
+    }
+
+    ul {
+        padding: 0 0 0 15px;
+    }
+}
+.skill-block {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    padding: 15px;
+    border: 1px solid $border;
+    text-align: center;
+
+    h3 {
+        font-weight: 500;
+        
+        margin: 0;
+        color: $heading;
+    }
+
+    span {
+        color: $text;
+        float: right;
+    }
+
+    h4 {
+        color: $text;
+        clear: both;
+        font-weight: 500;
+        margin: 0 0 15px 0;
+    }
 
     p, ul {
         margin: 0;
@@ -623,7 +749,6 @@ footer {
         padding: 0 0 0 15px;
     }
 }
-
 /*
     -------------------------------
     ----- 8. Project Styles -----
@@ -639,6 +764,12 @@ footer {
         color: $heading;
         margin-bottom: 50px;
     }
+    h4 {
+        font-size: 1.2em;
+        font-weight: 300;
+        color: #7e8890;
+        margin: 0 0 15px 0;
+    }
 }
 
 .project {
@@ -652,6 +783,33 @@ footer {
 
 .project-image {
     float: left;
+    img{
+        width: 300px;
+        height: 300px;
+    }
+    
+}
+
+.st-image {
+	margin: 0 auto 15px auto;
+	width: 190px;
+	height: 190px;
+	overflow: hidden;
+	position: relative;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 190px;
+	-moz-border-radius: 190px;
+	-webkit-border-radius: 190px;
+    -khtml-border-radius: 190px;
+}
+
+.st-image img {
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-khtml-border-radius: 100%;
 }
 
 .project-info {
@@ -908,7 +1066,7 @@ footer {
 // Small Devices
 @media only screen and (max-width : 768px) {
 
-    header {
+    header1 {
         position: fixed;
         display: none;
         z-index: 999;
